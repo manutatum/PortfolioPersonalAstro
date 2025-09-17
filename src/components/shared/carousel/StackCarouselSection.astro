@@ -1,0 +1,24 @@
+---
+import type { StackItem } from "@/interfaces/StackItem.interface";
+
+import StackCarouselItem from "@/components/shared/carousel/StackCarouselItem.astro";
+
+interface Props {
+  title: string;
+  items: StackItem[];
+}
+
+const { title, items } = Astro.props;
+---
+
+<h3
+  class="text-lg md:text-xl text-[var(--white-icon)] font-medium text-pretty leading-none"
+>
+  {title}
+</h3>
+<section
+  aria-label=`${title} stack`
+  class="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-6 decoration-0"
+>
+  {items.map((item) => <StackCarouselItem stackItem={item} />)}
+</section>

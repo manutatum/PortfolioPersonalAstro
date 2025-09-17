@@ -1,0 +1,33 @@
+---
+import { socialLinks } from "@/data/SocialLinks.data";
+
+import SocialLink from "./SocialLink.astro";
+---
+
+<div class="text-left space-y-4 pb-16">
+  <!-- INFORMACIÓN PERSONAL -->
+  <p class="text-md md:text-lg text-[var(--white-icon)]">
+    Hola, soy Manuel Jiménez
+  </p>
+  <div
+    class="flex flex-col lg:flex-row lg:items-center space-y-4 lg:space-y-0 lg:space-x-8 md:gap-4"
+  >
+    <h1 class="text-5xl md:text-6xl font-medium text-pretty leading-none">
+      Desarrollador
+      <br />
+      Software
+    </h1>
+    <p class="text-md md:text-2xl text-[var(--white-icon)]">
+        <!-- TODO: Añadir descripción sobre mi -->
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt autem
+      reiciendis quo excepturi distinctio magnam?
+    </p>
+  </div>
+
+  <!-- REDES SOCIALES -->
+  <div class="flex justify-start gap-2 pt-2 md:gap-4 md:pt-6">
+    {
+      socialLinks.map((link) => <SocialLink link={link} />)
+    }
+  </div>
+</div>

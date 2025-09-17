@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+:root {
+    --background: #101010;
+    --white: #dfdfdf;
+    --white-icon: #f3f3f398;
+    --white-icon-tr: #ffffff10;
+}
+
+* {
+    scroll-behavior: smooth;
+}
+
+@layer components {}

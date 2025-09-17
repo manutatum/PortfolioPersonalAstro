@@ -1,0 +1,19 @@
+---
+import type { LinkItem } from '@/interfaces/LinkItem.interface';
+
+interface Props {
+  link: LinkItem;
+}
+
+const { link } = Astro.props;
+const { href, label, icon: Icon } = link;
+---
+
+<a
+  href={href}
+  target="_blank"
+  aria-label={label}
+  class="text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-[var(--white-icon-tr)] p-3 rounded-xl hover:bg-[var(--white-icon-tr)]"
+>
+  <Icon class="size-8 lg:size-9"/>
+</a>

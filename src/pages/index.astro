@@ -1,16 +1,36 @@
 ---
+import MainLayout from "@/layouts/MainLayout.astro";
 
+import StackCarousel from "@/components/shared/carousel/StackCarousel.astro";
+import PersonalInfo from "@/components/shared/PersonalInfo.astro";
+import ContactMe from "@/components/shared/contact/ContactMe.astro";
+import Divider from "@/components/shared/Divider.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout>
+  <div class="pt-12 md:pt-0 md:mt-0">
+    <section id="home">
+      <div class="max-w-5xl mx-auto space-y-8 md:pt-36">
+        <!-- INTRODUCCION -->
+        <PersonalInfo />
+
+        <!-- CARRUSEL STACK TECNOLOGICO -->
+        <StackCarousel />
+      </div>
+    </section>
+
+    <Divider />
+
+    <!-- TODO: PROYECTOS -->
+    <section id="projects">
+      mis proyectos
+    </section>
+
+    <Divider />
+
+    <section id="contact" class="pt-16">
+      <!-- CONTACTO -->
+      <ContactMe />
+    </section>
+  </div>
+</MainLayout>

@@ -1,0 +1,159 @@
+---
+import { type StackItem } from "@/interfaces/StackItem.interface";
+
+import StackCarouselSection from "@/components/shared/carousel/StackCarouselSection.astro";
+
+import MySqlcon from "@/components/icons/carousel/database/MySqlcon.astro";
+import PostgreSqlIcon from "@/components/icons/carousel/database/PostgreSqlIcon.astro";
+import MongoDbIcon from "@/components/icons/carousel/database/MongoDbIcon.astro";
+import SqlServerIcon from "@/components/icons/carousel/database/SqlServerIcon.astro";
+import SqliteIcon from "@/components/icons/carousel/database/SqliteIcon.astro";
+
+import JavaScriptIcon from "@/components/icons/carousel/frontend/JavaScriptIcon.astro";
+import TypeScriptIcon from "@/components/icons/carousel/frontend/TypeScriptIcon.astro";
+import ReactIcon from "@/components/icons/carousel/frontend/ReactIcon.astro";
+import AstroIcon from "@/components/icons/carousel/frontend/AstroIcon.astro";
+import NextJsIcon from "@/components/icons/carousel/frontend/NextJsIcon.astro";
+import TailwindIcon from "@/components/icons/carousel/frontend/TailwindIcon.astro";
+import BootStrapIcon from "@/components/icons/carousel/frontend/BootStrapIcon.astro";
+
+import PhpIcon from "@/components/icons/carousel/backend/PhpIcon.astro";
+import PythonIcon from "@/components/icons/carousel/backend/PythonIcon.astro";
+import SpringBootIcon from "@/components/icons/carousel/backend/SpringBootIcon.astro";
+import JavaIcon from "@/components/icons/carousel/backend/JavaIcon.astro";
+import AspIcon from "@/components/icons/carousel/backend/AspIcon.astro";
+
+import GitIcon from "@/components/icons/carousel/utils/GitIcon.astro";
+import GitHubIcon from "@/components/icons/GitHubIcon.astro";
+import VsCodeIcon from "@/components/icons/carousel/utils/VsCodeIcon.astro";
+import PostmanIcon from "@/components/icons/carousel/utils/PostmanIcon.astro";
+import IntelliJIdeaIcon from "@/components/icons/carousel/utils/IntelliJIdeaIcon.astro";
+import VsIcon from "@/components/icons/carousel/utils/VsIcon.astro";
+
+const frontendStack: StackItem[] = [
+  {
+    title: "JavaScript",
+    icon: JavaScriptIcon,
+  },
+  {
+    title: "TypeScript",
+    icon: TypeScriptIcon,
+  },
+  {
+    title: "React",
+    icon: ReactIcon,
+  },
+  {
+    title: "Astro",
+    icon: AstroIcon,
+  },
+  {
+    title: "Next.js",
+    icon: NextJsIcon,
+  },
+  {
+    title: "Tailwind",
+    icon: TailwindIcon,
+  },
+  {
+    title: "Bootstrap",
+    icon: BootStrapIcon,
+  },
+];
+
+const backendStack: StackItem[] = [
+  {
+    title: "Java",
+    icon: JavaIcon,
+  },
+  {
+    title: "PHP",
+    icon: PhpIcon,
+  },
+  {
+    title: "Python",
+    icon: PythonIcon,
+  },
+  {
+    title: "Spring Boot",
+    icon: SpringBootIcon,
+  },
+  {
+    title: "Next.js",
+    icon: NextJsIcon,
+  },
+  {
+    title: "ASP.NET",
+    icon: AspIcon,
+  },
+];
+
+const databaseStack: StackItem[] = [
+  {
+    title: "MySQL",
+    icon: MySqlcon,
+  },
+  {
+    title: "PostgreSQL",
+    icon: PostgreSqlIcon,
+  },
+  {
+    title: "MongoDB",
+    icon: MongoDbIcon,
+  },
+  {
+    title: "SQL Server",
+    icon: SqlServerIcon,
+  },
+  {
+    title: "SQLite",
+    icon: SqliteIcon,
+  },
+];
+
+const utilsStack: StackItem[] = [
+  {
+    title: "Git",
+    icon: GitIcon,
+  },
+  {
+    title: "GitHub",
+    icon: GitHubIcon,
+  },
+  {
+    title: "VS Code",
+    icon: VsCodeIcon,
+  },
+  {
+    title: "Visual Studio",
+    icon: VsIcon,
+  },
+  {
+    title: "Postman",
+    icon: PostmanIcon,
+  },
+  {
+    title: "IntelliJ IDEA",
+    icon: IntelliJIdeaIcon,
+  },
+];
+---
+
+<h2
+  class="text-3xl md:text-4xl text-[var(--white)] font-medium text-pretty leading-none w-fit mt-12"
+>
+  Mi stack tecnológico
+</h2>
+<div class="flex flex-col gap-8 md:gap-4">
+  <!-- FRONTEND -->
+  <StackCarouselSection title="Frontend" items={frontendStack} />
+
+  <!-- BACKEND -->
+  <StackCarouselSection title="Backend" items={backendStack} />
+
+  <!-- DATABASE -->
+  <StackCarouselSection title="Bases de Datos" items={databaseStack} />
+
+  <!-- UTILS -->
+  <StackCarouselSection title="Utilidades" items={utilsStack} />
+</div>

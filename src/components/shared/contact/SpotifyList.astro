@@ -1,0 +1,19 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<iframe
+  title="Mi mejor música"
+  data-testid="embed-iframe"
+  style="border-radius:12px"
+  src="https://open.spotify.com/embed/playlist/1NY4YGLCxrCxSqMvPynhx6?utm_source=generator&theme=0"
+  class={className}
+  height="152"
+  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+  loading="lazy"
+>
+</iframe>

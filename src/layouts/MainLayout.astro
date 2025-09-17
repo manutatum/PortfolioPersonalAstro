@@ -1,0 +1,27 @@
+---
+import Navbar from "@/components/shared/navbar/Navbar.astro";
+import Footer from "@/components/shared/Footer.astro";
+import "@/styles/global.css";
+import Divider from "@/components/shared/Divider.astro";
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Portfolio Manuel Jimenez</title>
+  </head>
+  <body class="text-[var(--white)] absolute h-screen w-screen bg-[var(--background)] px-9 sm:px-16 lg:px-16">
+    <Navbar />
+
+    <main>
+      <slot />
+    </main>
+
+    <Divider />
+
+    <Footer />
+  </body>
+</html>

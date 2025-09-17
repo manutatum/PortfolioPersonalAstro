@@ -1,0 +1,55 @@
+---
+import { socialLinks } from "@/data/SocialLinks.data";
+
+import SocialLink from "./SocialLink.astro";
+
+import AstroIcon from "../icons/carousel/frontend/AstroIcon.astro";
+import TypeScriptIcon from "../icons/carousel/frontend/TypeScriptIcon.astro";
+import TailwindIcon from "../icons/carousel/frontend/TailwindIcon.astro";
+import VercelIcon from "../icons/VercelIcon.astro";
+
+import SpotifyList from "./contact/SpotifyList.astro";
+---
+
+<footer
+  class="max-w-5xl mx-auto w-full flex flex-col
+  gap-8 md:gap-6 lg:gap-12 lg:flex-row items-center
+  md:justify-between pb-24 md:pb-10 mt-12"
+>
+  <!-- REDES SOCIALES -->
+  <div class="flex justify-start gap-2 md:gap-4">
+    {socialLinks.map((link) => <SocialLink link={link} />)}
+  </div>
+
+  <!-- TECNOLOGIAS USADAS -->
+  <div
+    class="flex flex-wrap flex-col gap-2 md:gap-4 items-center text-md font-medium"
+  >
+    <div
+      class="grayscale hover:grayscale-0 transition-all duration-300 ease-in-out"
+    >
+      <span class="flex flex-wrap items-center gap-2">
+        Desarrollado en Astro <AstroIcon class="w-4 h-4" /> y TypeScript <TypeScriptIcon
+          class="w-4 h-4"
+        />
+      </span>
+    </div>
+
+    <div
+      class="grayscale hover:grayscale-0 transition-all duration-300 ease-in-out"
+    >
+      <span class="flex flex-wrap items-center gap-2">
+        Estilado con Tailwind CSS <TailwindIcon class="w-4 h-4" />
+      </span>
+    </div>
+
+    <div>
+      <span class="flex flex-wrap items-center gap-2">
+        Desplegado con Vercel <VercelIcon class="w-4 h-4" />
+      </span>
+    </div>
+  </div>
+
+  <!-- PLAYLIST DE SPOTIFY -->
+  <SpotifyList class="w-full lg:w-80" />
+</footer>

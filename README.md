@@ -1,43 +1,66 @@
-# Astro Starter Kit: Minimal
+# Manuel Jiménez – Portfolio
 
-```sh
-bun create astro@latest -- --template minimal
+Este es mi portfolio personal, construido con **Astro**, mostrando mis proyectos, habilidades y experiencia en desarrollo web.
+
+## 🚀 Tecnologías utilizadas
+
+- **Frontend:** Astro, TailwindCSS 
+
+- **Herramientas:** Vercel (despliegue), Git (control de versiones)
+
+![Astro](https://img.shields.io/badge/Astro-FF5F00?style=for-the-badge&logo=astro&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)
+
+---
+
+## 💾 Instalación
+
+1. **Clonar el repositorio:**
+```bash
+git clone https://github.com/tuusuario/portfolio.git
+cd portfolio
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+2. **Instalar dependencias:**
+```bash
+npm install or
+yarn install or 
+bun install or
+pnpm install
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+3. **Ejecutar en modo desarrollo:**
+```bash
+npm run dev or
+yarn dev or
+bun dev or
+pnpm dev
+```
+Esto levantará un servidor local, normalmente en http://localhost:5173
+, donde podrás ver tu portfolio en tiempo real.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## 📦 Construir para producción
+```bash
+npm run build or
+yarn build or
+bun build or
+pnpm build
+```
+Esto generará la carpeta dist/ con los archivos listos para desplegar en cualquier hosting estático, como Vercel o Netlify.
 
-Any static assets, like images, can be placed in the `public/` directory.
+Para previsualizar la versión de producción localmente:
+```bash
+npm run preview or
+yarn preview or
+bun preview or
+pnpm preview
+```
+## 🔗 Despliegue en Vercel
 
-## 🧞 Commands
+1. Conecta tu repositorio de GitHub a Vercel.
+2. El comando de build por defecto es npm run build y la carpeta de salida es **./dist**.
+3. Despliega y listo.
 
-All commands are run from the root of the project, from a terminal:
+## 📝 Contribuciones
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `bun install`             | Installs dependencies                            |
-| `bun dev`             | Starts local dev server at `localhost:4321`      |
-| `bun build`           | Build your production site to `./dist/`          |
-| `bun preview`         | Preview your build locally, before deploying     |
-| `bun astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `bun astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+### Este portfolio es personal, pero si quieres proponer mejoras o corregir errores, puedes abrir un pull request.

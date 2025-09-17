@@ -1,0 +1,22 @@
+---
+import type { StackItem } from "@/interfaces/StackItem.interface";
+
+interface Props {
+  stackItem: StackItem;
+}
+
+const { stackItem } = Astro.props;
+const { title, icon: Icon } = stackItem;
+
+---
+
+<article
+  class="flex flex-col items-center justify-center
+            gap-2 text-[var(--white-icon)] hover:text-[var(--white)]
+            md:grayscale md:hover:grayscale-0 hover:bg-[var(--white-icon-tr)]
+            border border-[var(--white-icon-tr)] rounded-xl p-4
+            transition-all duration-200 ease-in-out cursor-pointer"
+>
+  <Icon class="w-12 h-12" />
+  <p class="text-md font-medium">{title}</p>
+</article>

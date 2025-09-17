@@ -1,0 +1,21 @@
+---
+import type { LinkItem } from "@/interfaces/LinkItem.interface";
+
+interface Props {
+  link: LinkItem;
+}
+
+const { link } = Astro.props;
+const { href, label, icon: Icon } = link;
+---
+
+<li class="flex-1">
+  <a
+    href={href}
+    class="flex flex-col justify-center items-center gap-1 text-white/90 transition-colors text-sm relative group active"
+  >
+    <Icon class="w-6 h-6 md:hidden" />
+    <span class="md:hidden">{label}</span>
+    <span class="hidden md:inline-block">{label}</span>
+  </a>
+</li>
