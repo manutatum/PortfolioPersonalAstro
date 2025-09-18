@@ -11,4 +11,18 @@
     scroll-behavior: smooth;
 }
 
-@layer components {}
+@layer components {
+    .card {
+        @apply flex flex-col overflow-hidden rounded-xl bg-[var(--background)]/80 hover:bg-[var(--white-icon-tr)] border border-[var(--white-icon-tr)] shadow-lg transition-colors cursor-pointer;
+    
+        .card-image {
+            @apply w-full h-56 object-cover transition-transform duration-500;
+        }
+    }
+
+    .card:hover {
+        .card-image {
+            @apply scale-105;
+        }
+    }
+}
