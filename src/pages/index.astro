@@ -5,12 +5,13 @@ import StackCarousel from "@/components/shared/carousel/StackCarousel.astro";
 import PersonalInfo from "@/components/shared/PersonalInfo.astro";
 import ContactMe from "@/components/shared/contact/ContactMe.astro";
 import Divider from "@/components/shared/Divider.astro";
+import MyProjects from "@/components/shared/project/MyProjects.astro";
 ---
 
 <MainLayout>
   <div class="pt-12 md:pt-0 md:mt-0">
-    <section id="home">
-      <div class="max-w-5xl mx-auto space-y-8 md:pt-36">
+    <section id="home" class="pt-16 md:pt-24">
+      <div class="max-w-5xl mx-auto space-y-8">
         <!-- INTRODUCCION -->
         <PersonalInfo />
 
@@ -21,14 +22,14 @@ import Divider from "@/components/shared/Divider.astro";
 
     <Divider />
 
-    <!-- TODO: PROYECTOS -->
-    <section id="projects">
-      mis proyectos
+    <section id="projects" class="pt-16 md:pt-20">
+      <!-- PROYECTOS -->
+      <MyProjects />
     </section>
 
     <Divider />
 
-    <section id="contact" class="pt-16">
+    <section id="contact" class="pt-16 md:pt-20">
       <!-- CONTACTO -->
       <ContactMe />
     </section>
