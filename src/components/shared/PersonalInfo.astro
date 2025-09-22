@@ -18,7 +18,8 @@ import SocialLink from "./SocialLink.astro";
       Software
     </h1>
     <p class="description text-lg md:text-2xl text-[var(--white-icon)]">
-      Apasionado por la tecnología, disfruto creando aplicaciones modernas que combinan buen diseño, eficiencia y soluciones reales.
+      Apasionado por la tecnología, disfruto creando aplicaciones modernas que
+      combinan buen diseño, eficiencia y soluciones reales.
     </p>
   </div>
 
@@ -28,24 +29,30 @@ import SocialLink from "./SocialLink.astro";
   </div>
 </div>
 
-<!-- <script>
+<script>
   import { gsap } from "gsap";
 
-  gsap.from(".title", {
-    y: () => gsap.utils.random(-20, 20),
-    x: () => gsap.utils.random(150, -150),
-    opacity: 0,
-    duration: 1,
-    delay: 0.5,
-    ease: "bounce.out",
-  })
+  document.addEventListener("DOMContentLoaded", () => {
+    const isMobile = window.innerWidth < 768;
 
-  gsap.from(".description", {
-    y: () => gsap.utils.random(-150, 150),
-    x: () => gsap.utils.random(30, -30),
-    opacity: 0,
-    duration: 1,
-    delay: 1,
-    ease: "bounce.out",
-  })
-</script> -->
+    !isMobile &&
+      gsap.from(".title", {
+        y: () => gsap.utils.random(-20, 20),
+        x: () => gsap.utils.random(150, -150),
+        opacity: 0,
+        duration: 1,
+        delay: 0.5,
+        ease: "bounce.out",
+      });
+
+    !isMobile &&
+      gsap.from(".description", {
+        y: () => gsap.utils.random(-150, 150),
+        x: () => gsap.utils.random(30, -30),
+        opacity: 0,
+        duration: 1,
+        delay: 1,
+        ease: "bounce.out",
+      });
+  });
+</script>

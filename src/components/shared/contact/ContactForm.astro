@@ -67,43 +67,48 @@
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-  gsap.registerPlugin(ScrollTrigger);
+  document.addEventListener("DOMContentLoaded", () => {
+    const isMobile = window.innerWidth < 768;
 
-  // gsap.from(".contact-item", {
-  //   y: () => gsap.utils.random(-20, 20),
-  //   x: () => gsap.utils.random(50, -50),
-  //   opacity: 0,
-  //   duration: 1,
-  //   ease: "bounce.out",
-  //   scrollTrigger: {
-  //     trigger: ".contact-container",
-  //     start: "top 85%",
-  //   },
-  //   stagger: 0.2,
-  // });
+    gsap.registerPlugin(ScrollTrigger);
 
-  const form = document.querySelector("form") as HTMLFormElement;
+    !isMobile &&
+      gsap.from(".contact-item", {
+        y: () => gsap.utils.random(-20, 20),
+        x: () => gsap.utils.random(50, -50),
+        opacity: 0,
+        duration: 1,
+        ease: "bounce.out",
+        scrollTrigger: {
+          trigger: ".contact-container",
+          start: "top 85%",
+        },
+        stagger: 0.2,
+      });
 
-  const btnSubmit = document.getElementById("btnSubmit") as HTMLButtonElement;
+    const form = document.querySelector("form") as HTMLFormElement;
 
-  form.addEventListener("submit", async (event) => {
-    event.preventDefault();
+    const btnSubmit = document.getElementById("btnSubmit") as HTMLButtonElement;
 
-    btnSubmit.disabled = true;
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
 
-    const formData = new FormData(form);
+      btnSubmit.disabled = true;
 
-    const { data, error } = await actions.sendContact(formData);
+      const formData = new FormData(form);
 
-    if (error) {
-      btnSubmit.disabled = false;
-      return;
-    }
+      const { data, error } = await actions.sendContact(formData);
 
-    if (data.ok) {
-      btnSubmit.disabled = false;
-      alert(data.message);
-      form.reset();
-    }
+      if (error) {
+        btnSubmit.disabled = false;
+        return;
+      }
+
+      if (data.ok) {
+        btnSubmit.disabled = false;
+        alert(data.message);
+        form.reset();
+      }
+    });
   });
 </script>
