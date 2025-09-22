@@ -3,18 +3,67 @@ import Navbar from "@/components/shared/navbar/Navbar.astro";
 import Footer from "@/components/shared/Footer.astro";
 import "@/styles/global.css";
 import Divider from "@/components/shared/Divider.astro";
-import Analytics from '@vercel/analytics/astro'
+import Analytics from "@vercel/analytics/astro";
 ---
 
 <html lang="es">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Portfolio Manuel Jimenez</title>
+    <meta name="description" content="Portafolio personal de Manuel Jimenez" />
+
+    <title>Portfolio Personal</title>
+
+    <!-- Favicon general -->
+    <link
+      rel="shortcut icon"
+      href="/favicon_io/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- Favicons PNG -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon_io/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon_io/favicon-32x32.png"
+    />
+
+    <!-- Apple Touch Icon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon_io/apple-touch-icon.png"
+    />
+
+    <!-- Android / Chrome -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/favicon_io/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="/favicon_io/android-chrome-512x512.png"
+    />
+
+    <!-- Manifest -->
+    <link rel="manifest" href="/favicon_io/site.webmanifest" />
   </head>
-  <body class="text-[var(--white)] absolute h-screen w-screen bg-[var(--background)] px-9 sm:px-16 lg:px-16">
+  <body
+    class="text-[var(--white)] absolute h-screen w-screen bg-[var(--background)] px-9 sm:px-16 lg:px-16"
+  >
     <Navbar />
 
     <main>

@@ -19,7 +19,7 @@ import SocialLink from "./SocialLink.astro";
     </h1>
     <p class="description text-lg md:text-2xl text-[var(--white-icon)]">
       Apasionado por la tecnología, disfruto creando aplicaciones modernas que
-      combinan buen diseño, eficiencia y soluciones reales.
+      combinan buen <b class="highlight">diseño</b>, <b class="highlight">eficiencia</b> y <b class="highlight">soluciones reales</b>.
     </p>
   </div>
 
@@ -56,3 +56,13 @@ import SocialLink from "./SocialLink.astro";
       });
   });
 </script>
+
+<style>
+  .highlight {
+    color: var(--color-blue-300);
+    transition: all 0.3s ease;
+  }
+  .highlight:hover {
+    color: var(--color-blue-400)
+  }
+</style>
