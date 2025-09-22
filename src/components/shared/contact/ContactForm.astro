@@ -69,18 +69,18 @@
 
   gsap.registerPlugin(ScrollTrigger);
 
-  gsap.from(".contact-item", {
-    y: () => gsap.utils.random(-20, 20),
-    x: () => gsap.utils.random(50, -50),
-    opacity: 0,
-    duration: 1,
-    ease: "bounce.out",
-    scrollTrigger: {
-      trigger: ".contact-container",
-      start: "top 85%",
-    },
-    stagger: 0.2,
-  });
+  // gsap.from(".contact-item", {
+  //   y: () => gsap.utils.random(-20, 20),
+  //   x: () => gsap.utils.random(50, -50),
+  //   opacity: 0,
+  //   duration: 1,
+  //   ease: "bounce.out",
+  //   scrollTrigger: {
+  //     trigger: ".contact-container",
+  //     start: "top 85%",
+  //   },
+  //   stagger: 0.2,
+  // });
 
   const form = document.querySelector("form") as HTMLFormElement;
 
