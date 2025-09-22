@@ -12,22 +12,40 @@ import SocialLink from "./SocialLink.astro";
   <div
     class="flex flex-col lg:flex-row lg:items-center space-y-4 lg:space-y-0 lg:space-x-8 md:gap-4"
   >
-    <h1 class="text-5xl md:text-6xl font-medium text-pretty leading-none">
+    <h1 class="title text-5xl md:text-6xl font-medium text-pretty leading-none">
       Desarrollador
       <br />
       Software
     </h1>
-    <p class="text-md md:text-2xl text-[var(--white-icon)]">
-        <!-- TODO: Añadir descripción sobre mi -->
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt autem
-      reiciendis quo excepturi distinctio magnam?
+    <p class="description text-lg md:text-2xl text-[var(--white-icon)]">
+      Apasionado por la tecnología, disfruto creando aplicaciones modernas que combinan buen diseño, eficiencia y soluciones reales.
     </p>
   </div>
 
   <!-- REDES SOCIALES -->
   <div class="flex justify-start gap-2 pt-2 md:gap-4 md:pt-6">
-    {
-      socialLinks.map((link) => <SocialLink link={link} />)
-    }
+    {socialLinks.map((link) => <SocialLink link={link} />)}
   </div>
 </div>
+
+<script>
+  import { gsap } from "gsap";
+
+  gsap.from(".title", {
+    y: () => gsap.utils.random(-20, 20),
+    x: () => gsap.utils.random(150, -150),
+    opacity: 0,
+    duration: 1,
+    delay: 0.5,
+    ease: "bounce.out",
+  })
+
+  gsap.from(".description", {
+    y: () => gsap.utils.random(-150, 150),
+    x: () => gsap.utils.random(30, -30),
+    opacity: 0,
+    duration: 1,
+    delay: 1,
+    ease: "bounce.out",
+  })
+</script>
