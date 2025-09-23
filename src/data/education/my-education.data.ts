@@ -4,7 +4,7 @@ export const myEducation: EducationModule[] = [
     {
         title: "Desarrollo de Aplicaciones Web",
         description: "Ciclo Superior en I.E.S. Trassierra, centrado en el desarrollo de aplicaciones web modernas usando HTML, CSS, JavaScript y frameworks actuales, con buenas prácticas de diseño y usabilidad.",
-        startDate: new Date(2021, 9, 15),
+        startDate: new Date(2022, 9, 15),
         endDate: new Date(2024, 6, 15),
     },
     {
