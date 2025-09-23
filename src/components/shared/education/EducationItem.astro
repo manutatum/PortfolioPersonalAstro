@@ -1,0 +1,74 @@
+---
+import type { EducationModule } from "@/interfaces/EducationModule.interface";
+
+import EducationTickIcon from "@/components/icons/education/EducationTickIcon.astro";
+import EducationCrossIcon from "@/components/icons/education/EducationCrossIcon.astro";
+
+interface Props {
+  item: EducationModule;
+  isRight: boolean;
+}
+
+const { item, isRight } = Astro.props;
+const { title, description, startDate, endDate } = item;
+
+const isFinished = !!endDate;
+---
+
+<div class="relative w-full">
+  <!-- ICONO -->
+  {
+    isFinished ? (
+      <EducationTickIcon
+        class={`education-icon absolute -top-0.5 z-10 h-8 w-8 rounded-full text-blue-300 -left-4 ${
+          isRight && "md:left-auto md:-right-4"
+        }`}
+      />
+    ) : (
+      <EducationCrossIcon
+        class={`education-icon absolute -top-0.5 z-10 h-8 w-8 rounded-full text-blue-300 -left-4 ${
+          isRight && "md:left-auto md:-right-4"
+        }`}
+      />
+    )
+  }
+
+  <!-- TEXTO -->
+  <div class=`ml-6 text-left ${isRight && "md:mr-6 md:text-right"}`>
+    <h4 class="font-bold text-[var(--white)]">{title}</h4>
+    <p
+      class=`mt-2 text-sm text-[var(--white-icon)] text-pretty`
+    >
+      {description}
+    </p>
+    {
+      endDate ? (
+        <span class="mt-1 block text-sm font-semibold text-blue-300">
+          {startDate.getFullYear()} - {endDate.getFullYear()}
+        </span>
+      ) : (
+        <span class="mt-1 block text-sm font-semibold text-blue-300">
+          {startDate.getFullYear()} - En proceso
+        </span>
+      )
+    }
+  </div>
+</div>
+
+<script>
+  import { gsap } from "gsap";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    gsap.from(".education-icon", {
+      duration: 1,
+      opacity: 0,
+      scale: 0.5,
+      stagger: 0.1,
+      scrollTrigger: {
+        trigger: ".education-section",
+        start: "-=50 center",
+        toggleActions: "play none none reverse",
+      },
+    });
+  });
+</script>

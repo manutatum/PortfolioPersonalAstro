@@ -2,10 +2,15 @@
 import MainLayout from "@/layouts/MainLayout.astro";
 
 import StackCarousel from "@/components/shared/carousel/StackCarousel.astro";
-import PersonalInfo from "@/components/shared/PersonalInfo.astro";
+
 import ContactMe from "@/components/shared/contact/ContactMe.astro";
+
+import PersonalInfo from "@/components/shared/PersonalInfo.astro";
 import Divider from "@/components/shared/Divider.astro";
+
 import MyProjects from "@/components/shared/project/MyProjects.astro";
+
+import MyEducation from "@/components/shared/education/MyEducation.astro";
 ---
 
 <MainLayout>
@@ -18,6 +23,12 @@ import MyProjects from "@/components/shared/project/MyProjects.astro";
         <!-- CARRUSEL STACK TECNOLOGICO -->
         <StackCarousel />
       </div>
+    </section>
+
+    <Divider />
+
+    <section id="brain" class="pt-16 md:pt-20">
+      <MyEducation />
     </section>
 
     <Divider />

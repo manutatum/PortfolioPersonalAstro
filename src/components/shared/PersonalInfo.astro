@@ -1,5 +1,5 @@
 ---
-import { socialLinks } from "@/data/SocialLinks.data";
+import { socialLinks } from "@/data/social-links.data";
 
 import SocialLink from "./SocialLink.astro";
 ---
@@ -19,7 +19,9 @@ import SocialLink from "./SocialLink.astro";
     </h1>
     <p class="description text-lg md:text-2xl text-[var(--white-icon)]">
       Apasionado por la tecnología, disfruto creando aplicaciones modernas que
-      combinan buen <b class="highlight">diseño</b>, <b class="highlight">eficiencia</b> y <b class="highlight">soluciones reales</b>.
+      combinan buen <b class="highlight">diseño</b>, <b class="highlight"
+        >eficiencia</b
+      > y <b class="highlight">soluciones reales</b>.
     </p>
   </div>
 
@@ -33,27 +35,24 @@ import SocialLink from "./SocialLink.astro";
   import { gsap } from "gsap";
 
   document.addEventListener("DOMContentLoaded", () => {
-    const isMobile = window.innerWidth < 768;
 
-    !isMobile &&
-      gsap.from(".title", {
-        y: () => gsap.utils.random(-20, 20),
-        x: () => gsap.utils.random(150, -150),
-        opacity: 0,
-        duration: 1,
-        delay: 0.5,
-        ease: "bounce.out",
-      });
+    gsap.from(".title", {
+      y: () => gsap.utils.random(-20, 20),
+      x: () => gsap.utils.random(150, -150),
+      opacity: 0,
+      duration: 1,
+      delay: 0.5,
+      ease: "bounce.out",
+    });
 
-    !isMobile &&
-      gsap.from(".description", {
-        y: () => gsap.utils.random(-150, 150),
-        x: () => gsap.utils.random(30, -30),
-        opacity: 0,
-        duration: 1,
-        delay: 1,
-        ease: "bounce.out",
-      });
+    gsap.from(".description", {
+      y: () => gsap.utils.random(-150, 150),
+      x: () => gsap.utils.random(30, -30),
+      opacity: 0,
+      duration: 1,
+      delay: 1,
+      ease: "bounce.out",
+    });
   });
 </script>
 
@@ -63,6 +62,6 @@ import SocialLink from "./SocialLink.astro";
     transition: all 0.3s ease;
   }
   .highlight:hover {
-    color: var(--color-blue-400)
+    color: var(--color-blue-400);
   }
 </style>

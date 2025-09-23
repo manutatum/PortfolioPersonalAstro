@@ -68,23 +68,22 @@
   import { ScrollTrigger } from "gsap/ScrollTrigger";
 
   document.addEventListener("DOMContentLoaded", () => {
-    const isMobile = window.innerWidth < 768;
 
     gsap.registerPlugin(ScrollTrigger);
 
-    !isMobile &&
-      gsap.from(".contact-item", {
-        y: () => gsap.utils.random(-20, 20),
-        x: () => gsap.utils.random(50, -50),
-        opacity: 0,
-        duration: 1,
-        ease: "bounce.out",
-        scrollTrigger: {
-          trigger: ".contact-container",
-          start: "top 85%",
-        },
-        stagger: 0.2,
-      });
+    gsap.from(".contact-item", {
+      y: () => gsap.utils.random(-20, 20),
+      x: () => gsap.utils.random(50, -50),
+      opacity: 0,
+      duration: 1,
+      ease: "bounce.out",
+      scrollTrigger: {
+        trigger: ".contact-container",
+        start: "top 85%",
+        toggleActions: "play none none reverse",
+      },
+      stagger: 0.2,
+    });
 
     const form = document.querySelector("form") as HTMLFormElement;
 
@@ -99,7 +98,7 @@
 
       const { data, error } = await actions.sendContact(formData);
 
-      // TODO: AGREGAR ALERTAS CON SWEET ALERT 
+      // TODO: AGREGAR ALERTAS CON SWEET ALERT
 
       if (error) {
         btnSubmit.disabled = false;

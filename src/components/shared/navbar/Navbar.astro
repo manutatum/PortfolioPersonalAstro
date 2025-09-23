@@ -1,28 +1,6 @@
 ---
-import ContactIcon from "@/components/icons/navbar/ContactIcon.astro";
-import HomeIcon from "@/components/icons/navbar/HomeIcon.astro";
-import ProjectIcon from "@/components/icons/navbar/ProjectIcon.astro";
-
-import { type LinkItem } from "@/interfaces/LinkItem.interface";
-import NavbarItem from "./NavbarItem.astro";
-
-const links: LinkItem[] = [
-  {
-    href: "#home",
-    label: "Inicio",
-    icon: HomeIcon,
-  },
-  {
-    href: "#projects",
-    label: "Proyectos",
-    icon: ProjectIcon,
-  },
-  {
-    href: "#contact",
-    label: "Contactos",
-    icon: ContactIcon,
-  },
-];
+import { navbarItems } from "@/data/navbar/navbar-items.data";
+import NavbarItem from "@/components/shared/navbar/NavbarItem.astro";
 ---
 
 <div class="flex justify-center w-full">
@@ -35,7 +13,7 @@ const links: LinkItem[] = [
   >
     <div class="container mx-auto flex justify-center items-center p-3">
       <ul class="flex w-full justify-between gap-6">
-        {links.map((link) => <NavbarItem link={link} />)}
+        {navbarItems.map((link) => <NavbarItem link={link} />)}
       </ul>
     </div>
   </nav>

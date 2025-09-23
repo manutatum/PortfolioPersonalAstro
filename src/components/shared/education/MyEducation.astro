@@ -1,0 +1,59 @@
+---
+import { myEducation } from "@/data/education/my-education.data";
+import SubTitle from "../SubTitle.astro";
+import EducationItem from "./EducationItem.astro";
+
+// Ordenamos por fecha de inicio
+const educationItems = myEducation.sort(
+  (a, b) => a.startDate.getTime() - b.startDate.getTime()
+);
+
+// Agrupamos de 3 en 3
+const groupedItems = [];
+for (let i = 0; i < educationItems.length; i += 3) {
+  groupedItems.push(educationItems.slice(i, i + 3));
+}
+---
+
+<div class="max-w-5xl mx-auto overflow-hidden">
+  <SubTitle content="Mi formación" />
+
+  <div class="education-section mt-8 ml-5 space-y-12">
+    {
+      groupedItems.map((group, i) => (
+        <div
+          class={`flex flex-col gap-6 ${
+            i % 2 === 0
+              ? "mr-5 md:ml-auto border-l-2 md:border-l-0 md:border-r-2 border-dashed"
+              : "mr-auto pr-5 border-l-2 border-dashed"
+          }`}
+        >
+          {group.map((item) => (
+            <EducationItem item={item} isRight={i % 2 === 0} />
+          ))}
+        </div>
+      ))
+    }
+  </div>
+
+  <!-- <div class="education-section mt-8 ml-5 space-y-6 border-l-2 border-dashed">
+    {educationItems.map((item, i) => <EducationItem item={item} />)}
+  </div> -->
+</div>
+
+<script>
+  import { gsap } from "gsap";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    gsap.from(".education-section", {
+      duration: 1,
+      opacity: 0,
+      x: 200,
+      scrollTrigger: {
+        trigger: ".education-section",
+        start: "-=150 center",
+        toggleActions: "play none none reverse",
+      },
+    });
+  });
+</script>

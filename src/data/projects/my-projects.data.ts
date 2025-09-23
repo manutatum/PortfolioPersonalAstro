@@ -3,12 +3,13 @@ import type { Project } from "@/interfaces/Project.interface";
 import tesloShopImage from "@/assets/images/teslo-shop.png";
 import trassTareasImage from "@/assets/images/trass-tareas.png";
 import chatWebSocketsImage from "@/assets/images/chat-websockets.png";
+import bookManagerApiImage from "@/assets/images/book-manager-api.png";
 
 export const myProjects: Project[] = [
     {
         title: "Book Manager API",
         description: "API para una gestión personal de tus libros, permite añadir, eliminar y editar libros que te hayas leído o que tengas pendientes o en proceso.",
-        // image: "",
+        image: bookManagerApiImage,
         url: "https://github.com/manutatum/BookManagerSpring",
         technologies: ["Java", "Spring Boot", "MySQL", "Hibernate", "Swagger", "OpenPDF", "Spring Security", "JWT"]
     },

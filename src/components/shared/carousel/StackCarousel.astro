@@ -29,6 +29,7 @@ import VsCodeIcon from "@/components/icons/carousel/utils/VsCodeIcon.astro";
 import PostmanIcon from "@/components/icons/carousel/utils/PostmanIcon.astro";
 import IntelliJIdeaIcon from "@/components/icons/carousel/utils/IntelliJIdeaIcon.astro";
 import VsIcon from "@/components/icons/carousel/utils/VsIcon.astro";
+import SubTitle from "../SubTitle.astro";
 
 const frontendStack: StackItem[] = [
   {
@@ -138,12 +139,8 @@ const utilsStack: StackItem[] = [
   },
 ];
 ---
+<SubTitle content="Mi stack tecnológico"/>
 
-<h2
-  class="text-3xl md:text-4xl text-[var(--white)] font-medium text-pretty leading-none w-fit mt-12"
->
-  Mi stack tecnológico
-</h2>
 <div class="flex flex-col gap-8 md:gap-4">
   <!-- FRONTEND -->
   <StackCarouselSection title="Frontend" items={frontendStack} />

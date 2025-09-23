@@ -1,0 +1,9 @@
+---
+interface Props {
+    content: string;
+}
+
+const { content } = Astro.props;
+---
+
+<h2 class="text-3xl md:text-4xl text-[var(--white)] font-medium text-pretty leading-none w-fit">{content}</h2>
