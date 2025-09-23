@@ -35,24 +35,27 @@ import SocialLink from "./SocialLink.astro";
   import { gsap } from "gsap";
 
   document.addEventListener("DOMContentLoaded", () => {
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
-    gsap.from(".title", {
-      y: () => gsap.utils.random(-20, 20),
-      x: () => gsap.utils.random(150, -150),
-      opacity: 0,
-      duration: 1,
-      delay: 0.5,
-      ease: "bounce.out",
-    });
+    !isMobile &&
+      gsap.from(".title", {
+        y: () => gsap.utils.random(-20, 20),
+        x: () => gsap.utils.random(150, -150),
+        opacity: 0,
+        duration: 1,
+        delay: 0.5,
+        ease: "bounce.out",
+      });
 
-    gsap.from(".description", {
-      y: () => gsap.utils.random(-150, 150),
-      x: () => gsap.utils.random(30, -30),
-      opacity: 0,
-      duration: 1,
-      delay: 1,
-      ease: "bounce.out",
-    });
+    !isMobile &&
+      gsap.from(".description", {
+        y: () => gsap.utils.random(-150, 150),
+        x: () => gsap.utils.random(30, -30),
+        opacity: 0,
+        duration: 1,
+        delay: 1,
+        ease: "bounce.out",
+      });
   });
 </script>
 
