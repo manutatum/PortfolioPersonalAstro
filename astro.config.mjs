@@ -18,5 +18,8 @@ export default defineConfig({
       enabled: true,
     }
   }),
+
+  output: "static",
+
   integrations: [db()],
 });
