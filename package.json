@@ -17,6 +17,7 @@
     "@vercel/speed-insights": "^1.2.0",
     "astro": "^5.13.7",
     "gsap": "^3.13.0",
+    "notyf": "^3.10.0",
     "tailwindcss": "^4.1.13",
     "uuid": "^13.0.0"
   }

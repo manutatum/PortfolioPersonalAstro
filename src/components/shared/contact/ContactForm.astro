@@ -64,8 +64,12 @@
 
 <script>
   import { actions } from "astro:actions";
+
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  import { Notyf } from "notyf";
+  import 'notyf/notyf.min.css';
 
   document.addEventListener("DOMContentLoaded", () => {
     
@@ -92,6 +96,15 @@
 
     const btnSubmit = document.getElementById("btnSubmit") as HTMLButtonElement;
 
+    const notyf = new Notyf({
+      duration: 3000,
+      position: {
+        x: "right",
+        y: "bottom"
+      },
+      dismissible: true,
+    });
+
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
 
@@ -101,16 +114,15 @@
 
       const { data, error } = await actions.sendContact(formData);
 
-      // TODO: AGREGAR ALERTAS CON SWEET ALERT
-
       if (error) {
         btnSubmit.disabled = false;
+        notyf.error("¡Error al enviar el mensaje!");
         return;
       }
 
       if (data.ok) {
         btnSubmit.disabled = false;
-        alert(data.message);
+        notyf.success(data.message || "¡Mensaje enviado!");
         form.reset();
       }
     });
