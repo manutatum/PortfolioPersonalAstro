@@ -1,1 +1,0 @@
-import{g as r}from"./index.DKtf60Sy.js";import{S as o}from"./ScrollTrigger.BWsqEc1I.js";r.registerPlugin(o);r.utils.toArray(".stack-icon").forEach((t,i)=>{r.from(t,{y:50,opacity:0,rotation:-15,scale:.8,duration:.5,ease:"elastic.out(1, 0.5)",scrollTrigger:{trigger:t,start:"top 90%",toggleActions:"play none none none",anticipatePin:100}})});

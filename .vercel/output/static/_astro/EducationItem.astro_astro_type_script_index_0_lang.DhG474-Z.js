@@ -1,1 +1,0 @@
-import{g as e}from"./index.DKtf60Sy.js";document.addEventListener("DOMContentLoaded",()=>{e.from(".education-icon",{duration:1,opacity:0,scale:.5,stagger:.1,scrollTrigger:{trigger:".education-section",start:"-=50 center",toggleActions:"play none none reverse"}})});
