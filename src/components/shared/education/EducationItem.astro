@@ -15,10 +15,10 @@ const { title, description, startDate, endDate } = item;
 const isFinished = !!endDate;
 
 const educationDate = isFinished
-  ? startDate.getFullYear() === endDate.getFullYear()
-    ? `${startDate.getFullYear()}`
-    : `${startDate.getFullYear()} - ${endDate.getFullYear()}`
-  : `${startDate.getFullYear()} - En proceso`;
+  ? startDate.year === endDate.year
+    ? `${startDate.year}`
+    : `${startDate.year} - ${endDate.year}`
+  : `${startDate.year} - En proceso`;
 
 const EducationIcon = isFinished ? EducationTickIcon : EducationCrossIcon;
 ---

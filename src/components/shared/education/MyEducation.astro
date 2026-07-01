@@ -2,10 +2,11 @@
 import { myEducation } from "@/data/education/my-education.data";
 import SubTitle from "../SubTitle.astro";
 import EducationItem from "./EducationItem.astro";
+import { Temporal } from "@js-temporal/polyfill";
 
 // Ordenamos por fecha de inicio
 const educationItems = myEducation.sort(
-  (a, b) => a.startDate.getTime() - b.startDate.getTime()
+  (a, b) => Temporal.PlainDate.compare(a.startDate, b.startDate)
 );
 
 // Agrupamos de 3 en 3
